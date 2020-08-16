@@ -1,0 +1,35 @@
+version: '3.7'
+
+services:
+    django:
+        build: ./app
+        command: python manage.py runserver 0.0.0.0:8000
+        volumes:
+            - ./app/:/usr/src/app/
+        ports:
+            - 8000:8000
+        environment:
+            - DEBUG=1
+            - SECRET_KEY=vc0b358xlv(dte6+47bci%2zflto1qba&^=!61m00%eeskrm9=
+            - DATABASE_ENGINE=django.db.backends.postgresql
+            - DATABASE_DB=postgres
+            - DATABASE_USER=postgres
+            - DATABASE_PASSWORD=tareapass
+            - DATABASE_HOST=postgres
+            - DATABASE_PORT=5432
+        depends_on:
+            - postgres
+
+    postgres:
+        image: postgres:11.4-alpine
+        volumes:
+            - postgres_data:/var/lib/postgresql/data
+        environment:
+            - POSTGRES_USER=postgres
+            - POSTGRES_PASSWORD=tareapass
+            - POSTGRES_DB=postgres
+
+
+
+volumes:
+    postgres_data:
