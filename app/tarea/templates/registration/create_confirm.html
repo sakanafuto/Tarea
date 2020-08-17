@@ -1,0 +1,19 @@
+{% extends 'tarea/commons/base.html' %}
+
+{% block content %}
+  <h2 class="btm pb-2 mb-4">新規登録</h2>
+
+  <table  class="table table-borderless" >
+    <tr><td>お名前</td=><td>{{form.cleaned_data.username}}</td></tr>
+    <tr><td>パスワード</td><td>{{form.cleaned_data.password1}}</td></tr>
+  </table>
+
+  <form class="ui form" action="" method="POST">
+    {% csrf_token %}
+    {% for field in form %}
+    {{field.as_hidden}}
+    {% endfor %}
+    <p class="text-center"><button class="button py-2 mt-3 px-4" name="next" value="regist" type="submit">登録</button></p>
+    <p class="text-center"><button class="button-csl py-2 mt-3 px-4" name="next" value="back" type="submit">修正</button></p>
+  </form>
+{% endblock %}

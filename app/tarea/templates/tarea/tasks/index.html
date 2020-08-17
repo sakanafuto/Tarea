@@ -1,23 +1,47 @@
 {% extends 'tarea/commons/base.html' %}
 
-{% block title %}Tarea | Tasks{% endblock %}
-
 {% block content %}
+  {% if user.is_authenticated  %}
 
-<p>こんにちは，{{ user.username }}さん</p>
+    <p>こんにちは，{{ user.username }}さん</p>
 
-<h2>Task</h2>
+    <h2>Task</h2>
+    
+    {% for task in task_list %}
+      {% if task.completed %}
+      {% else %}
+        <div class="task-container my-3 d-flex justify-content-between align-items-baseline">
+          <a href="{% url 'tarea:detail' task.id %}" class="flex-grow-1 title pl-4">{{ task.title }}</a>
+          <a href="{% url 'tarea:complete' task.id %}" class="resp">完了</a>
+          <p class="date text-right mb-0 px-4" style="width: 16rem;">{{ task.user }}, {{ task.pub_date|date:"n/j H:i"}}</p>
+        </div>
+      {% endif %}
+    {% endfor %}
 
-  {% for task in task_list %}
+    </br>
+    
+    <h2>Complete</h2>
 
-    {{ task.title }}
+    {% for task in task_list %}
+      {% if task.completed %}
+        <div class="task-container striker my-3 d-flex justify-content-between align-items-baseline">
+          <a href="{% url 'tarea:detail' task.id %}" class="flex-grow-1 title pl-4">{{ task.title }}</a>
+          <a href="{% url 'tarea:uncomplete' task.id %}">未完了</a>
+          <p class="date text-right mb-0 px-4" style="width: 16rem;">{{ task.user }}, {{ task.pub_date|date:"n/j H:i"}}</p>
+        </div>
+      {% endif %}
+    {% endfor %}
 
-  {% endfor %}
+  {% else %}
 
-  <div class="my-3">
-    <p class="oha ">
-      おはよう
-    </p>
-  </div>
+    <div>
+      <p class="caption text-center p-4">Tareaは簡単なタスク投稿アプリです！</p>
+      
+      <div class="d-flex justify-content-center">
+        <p class="text-center"><a href="{% url 'tarea:create' %}" class="button-csl py-2 px-3">新規登録して使ってみる</a></p>
+        <p class="text-center pl-4"><a href="{% url 'tarea:login' %}" class="button py-2 px-3">ログインして使ってみる</a></p>
+      </div>
+    </div>
 
+  {% endif %}
 {% endblock %}
