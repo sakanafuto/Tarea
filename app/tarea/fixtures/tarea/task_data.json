@@ -1,0 +1,57 @@
+[
+  {
+    "model": "tarea.task",
+    "pk": 1,
+    "fields": {
+        "title": "課題",
+        "pub_date": "2019-01-03T12:34:56.789Z",
+        "caption": "食品化学実験レポート",
+        "completed": true,
+        "user": 1
+    }
+  },
+  {
+    "model": "tarea.task",
+    "pk": 2,
+    "fields": {
+        "title": "買い物",
+        "pub_date": "2019-01-03T12:34:56.789Z",
+        "caption": "牛乳・卵",
+        "completed": false,
+        "user": 1
+    }
+  },
+  {
+    "model": "tarea.task",
+    "pk": 3,
+    "fields": {
+        "title": "メール",
+        "pub_date": "2019-01-03T12:34:56.789Z",
+        "caption": "教授にメール",
+        "completed": false,
+        "user": 1
+    }
+  },
+  {
+    "model": "tarea.task",
+    "pk": 4,
+    "fields": {
+        "title": "掃除",
+        "pub_date": "2019-01-03T12:34:56.789Z",
+        "caption": "エアコンの掃除",
+        "completed": true,
+        "user": 1
+    }
+  },
+  {
+    "model": "tarea.task",
+    "pk": 5,
+    "fields": {
+        "title": "ガソリン",
+        "pub_date": "2019-01-03T12:34:56.789Z",
+        "caption": "今週中に",
+        "completed": false,
+        "user": 1
+    }
+  }
+]
