@@ -1,3 +1,33 @@
+/* universal */
+
+.container {
+  max-width: 960px;
+  border-left: 1px solid hsl(0, 0%, 80%);
+}
+
+/* body */
+
+body {
+  margin: 0;
+  padding-top: 85px;
+  letter-spacing: .1em;
+  line-height: 1.65;
+  text-align: justify;
+  flex-flow: column;
+  min-height: 100vh;
+  -webkit-text-size-adjust: 100%;
+}
+
 .oha {
   color: red;
+}
+
+.logo {
+  width: 40px;
+  border-radius: 50%;
+}
+
+.navbar {
+  font-family: 'fnkfrsh';
+  background: white;
 }

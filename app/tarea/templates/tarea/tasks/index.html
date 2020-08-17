@@ -1,15 +1,23 @@
 {% extends 'tarea/commons/base.html' %}
 
+{% block title %}Tarea | Tasks{% endblock %}
+
 {% block content %}
 
-{% for task in task_list %}
+<p>こんにちは，{{ user.username }}さん</p>
 
-{{ task.title }}
+<h2>Task</h2>
 
-{% endfor %}
+  {% for task in task_list %}
 
-<p class="oha">
-  おはよう
-</p>
+    {{ task.title }}
+
+  {% endfor %}
+
+  <div class="my-3">
+    <p class="oha ">
+      おはよう
+    </p>
+  </div>
 
 {% endblock %}
