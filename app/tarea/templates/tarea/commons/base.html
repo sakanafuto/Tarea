@@ -1,0 +1,42 @@
+{% load static %}
+{% bootstrap_css %}
+{% load fontawesome_5 %}
+{% bootstrap_javascript jquery='full' %}
+
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="{% static 'tarea/css/custom.css' %}">
+    <title>{% block title %}Tarea{% endblock %}</title>
+    {% fontawesome_5_static %} 
+  </head>
+
+  <body>
+
+    {% block header %}
+      <header class="fixed-top navbar-light navibar">
+        <nav class="navbar navbar-expand-sm">
+          <a href="/" class="navbar-brand"><img src="{% static 'tarea/logo.jpg' %}" class="logo"></a>
+          <a href="/" class="navbar-brand">Tarea</a>
+          <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarMenu">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarMenu">
+            <ul class="nav navbar-nav ml-auto">
+              <li class="nav-item"><a href="{% url 'tarea:new' %}" class="nav-link">タスクの追加</a></li> 
+            </ul>
+          </div>
+        </nav>
+      </header> 
+    {% endblock %}
+
+
+    <div class="container">
+      {% block content %}
+      {% endblock %}
+    </div>
+
+  </body>
+</html>

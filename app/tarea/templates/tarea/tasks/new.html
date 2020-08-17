@@ -1,0 +1,14 @@
+{% extends 'tarea/commons/base.html' %}
+
+{% block content %}
+  <h2>taskの追加</h2>
+
+  <form action="" method="post">
+    <p><label for="title_input">task内容</label></p>
+    <p><input type="text" name="title" id="title_input"></p>
+    <p><label for="caption_input">task内容</label></p>
+    <p><textarea type="text" name="caption" id="caption_input" placeholder="{{ task.caption }}"></textarea></p>
+    <p><button type="submit" class="button py-1 px-3">投稿</button></p>
+    {% csrf_token %}
+  </form>
+{% endblock %}

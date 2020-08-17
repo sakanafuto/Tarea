@@ -1,0 +1,17 @@
+{% extends 'tarea/commons/base.html' %}
+
+{% block content %}
+  <h2>taskの編集</h2>
+
+  <form action="" method="post">
+    <p><label for="title_input">task名</label></p>
+    <p><input type="text" name="title" id="title_input" value="{{ task.title }}"></p>
+    <p><label for="caption_input">task内容</label></p>
+    <p><textarea type="text" name="caption" id="caption_input" placeholder="{{ task.caption }}"></textarea></p>
+    <div class="d-flex justify-content-center align-items-end mt-3">
+      <p class="text-center"><button type="submit" class="button py-2 px-4">更新</button></p>
+      <p class="text-center ml-3"><a href="{% url 'tarea:detail' task.pk %}" class="button-csl py-2 px-3">キャンセル</a></p>
+    </div>
+    {% csrf_token %}
+  </form>
+{% endblock %}

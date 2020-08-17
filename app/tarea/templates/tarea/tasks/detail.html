@@ -1,0 +1,18 @@
+{% extends 'tarea/commons/base.html' %}
+
+{% block content %}
+  <p>
+    {{ task.title }}
+  </p>
+  <p>
+    {{ task.caption }}
+  </p>
+  <div class="d-flex">
+    <a href="{% url 'tarea:edit' task.pk %}">
+      <button class="icon"><i class="fa fa-pen fa-2x" aria-hidden="true"></i></button>
+    </a>
+    <a href="{% url 'tarea:delete' task.pk %}">
+      <button class="icon"><i class="fa fa-trash fa-2x" aria-hidden="true"></i></button>
+    </a>
+  </div>
+{% endblock %}
