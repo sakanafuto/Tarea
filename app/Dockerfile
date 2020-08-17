@@ -1,5 +1,7 @@
 FROM python:3.7-alpine
 
+COPY requirements.txt /usr/src/app/requirements.txt
+
 WORKDIR /usr/src/app
 
 ENV PYTHONDONTWRITEBYTECODE 1
@@ -13,6 +15,8 @@ RUN apk update \
 
 RUN pip install --upgrade pip \
     && pip install pipenv
+
+RUN pip install -r requirements.txt
 
 COPY ./Pipfile /usr/src/app/Pipfile
 

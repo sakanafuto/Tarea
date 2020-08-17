@@ -1,0 +1,15 @@
+{% extends 'tarea/commons/base.html' %}
+
+{% block content %}
+
+{% for task in task_list %}
+
+{{ task.title }}
+
+{% endfor %}
+
+<p class="oha">
+  おはよう
+</p>
+
+{% endblock %}
