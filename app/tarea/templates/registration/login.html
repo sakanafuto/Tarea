@@ -1,0 +1,18 @@
+{% extends 'tarea/commons/base.html' %}
+
+{% block content %}
+  <p class="text-center pl-4"><a href="{% url 'tarea:create' %}" class="button-csl py-2 px-3">新規登録はこちら！</a></p>
+
+  <h2 class="btm pb-2 mb-4">ログイン</h2>
+
+  <div class="easy-log my-4">
+    <p>次のように入力するとゲストユーザーとしてログインできます</p>
+    <small>　ユーザー名：　ゲスト<br>　パスワード：　guestpass</small>
+  </div>
+
+  <form class="ui form" action="" method="POST">
+    {% csrf_token %}
+    {{form.as_p}}
+    <p class="text-center"><button class="button py-2 px-4 mt-3" type="submit">ログイン</button></p>
+  </form>
+{% endblock %}

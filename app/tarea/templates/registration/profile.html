@@ -1,0 +1,16 @@
+{% extends 'tarea/commons/base.html' %}
+
+{% block content %}
+  <div class="profile-container">
+    <p>{{user.username}}さん、こんにちは</p>
+
+    {% for task in task_list %}
+      <div class="task-container my-3 d-flex justify-content-between align-items-baseline">
+        <a href="{% url 'tarea:detail' task.id %}" class="title pl-3">{{ task.title }}</a>
+        <p class="date text-right mb-0">{{ task.user }}, {{ task.pub_date|date:"n/j H:i"}}</p>
+      </div>
+    {% endfor %}
+    
+    <a class="button py-2 px-4" href="{% url 'tarea:password_change' %}">パスワード変更</a>
+  </div>
+{% endblock %}
