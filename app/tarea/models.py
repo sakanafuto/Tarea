@@ -1,3 +1,4 @@
+from django.conf import settings
 from django.db import models
 from django.utils import timezone
 from django.core.validators import MinLengthValidator
@@ -14,7 +15,7 @@ class Task(models.Model):
   pub_date = models.DateTimeField(default=timezone.now)
   caption = models.TextField(max_length=255)
   completed = models.BooleanField(default=False)
-  user = models.ForeignKey(get_user_model(), on_delete=models.CASCADE)
+  user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE,)
   
 
   def __str__(self): 
