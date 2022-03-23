@@ -1,17 +1,29 @@
 # tarea
-インターンで使うPythonの学習、、、
-Dockerも理解を深めたい
 
-**フロントエンド**
-- HTML/CSS
+## Overview
+Djangoを触ってみたかった。
+ついでにdocker-composeも。
+
+## Requirement
 - Bootstrap4
-- fontawesome5
+- python 3.7.8
+- Django 2.2.3
+- Docker 19.03.8
+- docker-compose 1.25.5
 
-**バックエンド**
-- python: 3.7.8
-- Django: 2.2.3
+## Usage
 
-**インフラ**
-- Docker: 19.03.8
-- docker-compose: 1.25.5
-- Postgresql
+## Features
+
+## Reference
+
+## Author
+
+[twitter](https://twitter.com/107ofu01)
+
+## Licence
+
+[MIT](https://......)
+
+
+
